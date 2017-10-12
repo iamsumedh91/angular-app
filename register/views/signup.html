@@ -1,0 +1,86 @@
+
+
+    <div class="container">
+
+      <form class="login-form" style="margin-bottom: 10px;" ng-submit = "addUser()">        
+        <div class="login-wrap">
+            <p class="login-img">SignUp</p>
+            
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Full Name" autofocus ng-model = "name">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Username" autofocus ng-model = "username">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input type="password" class="form-control" placeholder="Password" ng-model = "password">
+            </div>
+
+            <div class="input-group" ng-class = "{'has-error': password !== confirm_password, 'has-success': password == confirm_password}">
+                <span class="input-group-addon"></span>
+                <input id="inputSuccess" type="password" class="form-control" placeholder="Confirm Password" ng-model = "confirm_password">
+            </div>
+
+            <div class = "gender">
+                    <label class="radio-inline">
+                        <input type = "radio" name = "optradio" ng-model = "gender" value = "Male" required>Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type = "radio" name = "optradio" ng-model = "gender" value = "Female">Female
+                    </label>
+                    <label class="radio-inline">
+                        <input type = "radio" name = "optradio" ng-model = "gender" value = "Other">Other
+                    </label>
+            </div>
+            <br/>
+
+            <div>
+                <textarea class = "form-control address" rows = "5" ng-model = "address" placeholder="Address"></textarea>
+            </div>
+            <br/>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Email" autofocus ng-model = "email">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Mobile" autofocus ng-model = "mobile">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Pincode" autofocus ng-model = "pincode">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" placeholder="Occupation" autofocus ng-model = "occupation">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control" data-provide="datepicker" date-date-format = "yyyy-mm-dd" placeholder="Date Of Birth (yyyy-mm-dd)" autofocus ng-model = "dateofbirth">
+            </div>
+            
+            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+        </div>
+      </form>
+        <div class = "alert" style = "width: 500px; margin: 0 auto; margin-bottom: 50px;" ng-class = "{'alert-danger': new.message == 'Signup Falied', 'alert-success': new.message == 'Signup Successful'}" ng-if = "new">
+                    
+            <h5><strong>{{new.message}}</strong></h5>
+
+            <div class = "alert" ng-if = "new.errors">
+                <ul>
+                    <li ng-repeat = "error in new.errors">{{error}}</li>
+                </ul>
+            </div>
+        </div>
+</div>
+  

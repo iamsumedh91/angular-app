@@ -1,5 +1,9 @@
-		<div class = "container" style="color: #FFFFFF;">
-			<h1><strong>Home</strong></h1>
-			<div class = "divider"><hr></div>
-				<h1 ng-cloak ng-if = "globals.currentUser">Welcome {{globals.currentUser['username']}}</h1>
+<div class = "container" style="color: #FFFFFF;">
+	<div class="row row-centered pos">
+		<div class="col-xs-12 col-centered">
+			<h1 style="text-align: center;"><strong>Home</strong></h1>
+			<div class="text-center col-md-6 col-md-offset-3"><hr></div>
 		</div>
+		<h1 ng-cloak ng-if = "globals.currentUser" style="text-align: center;">Welcome {{globals.currentUser['username']}}</h1>
+	</div>
+</div>

@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="angularApp">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="author" content="GeeksLabs">
+  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Angular App</title>
+  <title>Angular App</title>
 
-    <!-- Bootstrap CSS -->    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
-    <!-- font icon -->
-    <link href="css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- Custom styles -->
-    <link href="css/style1.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->    
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="css/style1.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style-responsive.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,57 +30,53 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
   <script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
   <script src = "//code.angularjs.org/1.6.4/angular-cookies.js"></script>>
   <script src="assets/js/app.js"></script>
 </head>
 <body class="login-img3-body">
 
-<div ng-controller="Home">
+  <div ng-controller="Home">
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
 
         <div class="collapse navbar-collapse">
           <section ng-repeat="menu in menus">
             <ul class="nav navbar-nav" ng-if="menu.parent_id == 0"> 
-                <li>
-                  <a ng-class="{'dropdown-toggle': menu.submenu}" href="{{menu.link}}" ng-attr-data-toggle="{{ menu.submenu ? 'dropdown' : 'notToggle' }}" ng-if = "!globals.currentUser" ng-cloak>{{menu.name}} <b ng-class="{caret: menu.submenu}"></b></a>
+              <li>
+                <a ng-class="{'dropdown-toggle': menu.submenu}" href="{{menu.link}}" ng-attr-data-toggle="{{ menu.submenu ? 'dropdown' : 'notToggle' }}" ng-if = "!globals.currentUser" ng-cloak>{{menu.name}} <b ng-class="{caret: menu.submenu}"></b></a>
 
-                  <a ng-class="{'dropdown-toggle': menu.submenu}" href="{{menu.link}}" ng-attr-data-toggle="{{ menu.submenu ? 'dropdown' : 'notToggle' }}" ng-if = "globals.currentUser && menu.name !== 'SignUp' && menu.name !== 'Login' " ng-cloak>{{menu.name}} <b ng-class="{caret: menu.submenu}"></b></a>
-                    
-                    <ul class="dropdown-menu multi-level">
-                        
-                        <li ng-repeat="x in menu.submenu" class= "dropdown-submenu" ng-class="{after: x.submenu}">
-                            <a href="{{x.link}}" class="dropdown-toggle"  ng-attr-data-toggle="{{ x.submenu ? 'dropdown' : 'notToggle' }}">{{x.name}}</a>
-                            <ul ng-if="x.submenu" class="dropdown-menu">
-                              <li ng-repeat = "y in x.submenu"><a href="{{y.link}}">{{y.name}}</a></li>
-                        </li>
-                    </ul>
+                <a ng-class="{'dropdown-toggle': menu.submenu}" href="{{menu.link}}" ng-attr-data-toggle="{{ menu.submenu ? 'dropdown' : 'notToggle' }}" ng-if = "globals.currentUser && menu.name !== 'SignUp' && menu.name !== 'Login' " ng-cloak>{{menu.name}} <b ng-class="{caret: menu.submenu}"></b></a>
+
+                <ul class="dropdown-menu multi-level">
+
+                  <li ng-repeat="x in menu.submenu" class= "dropdown-submenu" ng-class="{after: x.submenu}">
+                    <a href="{{x.link}}" class="dropdown-toggle"  ng-attr-data-toggle="{{ x.submenu ? 'dropdown' : 'notToggle' }}">{{x.name}}</a>
+                    <ul ng-if="x.submenu" class="dropdown-menu">
+                      <li ng-repeat = "y in x.submenu"><a href="{{y.link}}">{{y.name}}</a></li>
+                    </li>
+                  </ul>
                 </li>
-            </ul>
-          </section>
-        <section style = "width: 100%; display: block; text-align: right;" ng-if = "globals.currentUser" ng-cloak>
-          <button type = "button" class = "btn btn-primary " style="margin-top: 10px;" ng-click = "logoutUser()">Logout</button>
-        </section>
-      </div><!--/.nav-collapse -->
-  </div>
-</div>
-</div>
-<div style = "margin-top: 50px;" class="container" ng-view>
-
-</div>
-
-</body>
+              </ul>
+            </section>
+            <section style = "width: 100%; display: block; text-align: right;" ng-if = "globals.currentUser" ng-cloak>
+              <button type = "button" class = "btn btn-primary " style="margin-top: 10px;" ng-click = "logoutUser()">Logout</button>
+            </section>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div style = "margin-top: 50px;" class="container" ng-view>
+    </div>
+  </body>
 </html>

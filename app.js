@@ -44,6 +44,7 @@ angularApp.controller('signupCntrl', ['$scope', '$filter', '$http', function ($s
     /*
     * Initializing values
     */
+    $scope.name1 = "name";
 
     $scope.name = "";
     
@@ -165,6 +166,7 @@ angularApp.controller('loginCntrl', ['$scope', '$http', '$window', '$cookieStore
         $http.post('http://localhost/test_user/rest/login', {username: $scope.login_username, password: $scope.login_password})
         .then(function(result){
             $scope.login = result.data;
+            console.log($scope.login);
             if($scope.login.message == "Login Success")
             {
                 

@@ -1,36 +1,37 @@
 
     <div class="container">
 
-      <form class="login-form" ng-submit = "loginUser()">        
-        <div class="login-wrap">
-            <p class="login-img"><i class="icon_lock_alt"></i></p>
+        <form class="login-form" ng-submit = "loginUser()">        
+            <div class="login-wrap">
+                <p class="login-img"><i class="icon_lock_alt"></i></p>
 
-            <div class="input-group">
-              <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="Username" autofocus ng-model = "login_username">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
+                    <input type="text" class="form-control" placeholder="Username / Email" autofocus ng-model = "login_username" required>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                    <input type="password" class="form-control" placeholder="Password" ng-model = "login_password" required>
+                </div>
+
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                <br/>
+
+                <a href="http://localhost/login/#/register/views"><button class="btn btn-info btn-lg btn-block" type="submit">Signup</button></a>
             </div>
+        </form>
 
-            <div class="input-group">
-                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="Password" ng-model = "login_password">
-            </div>
-
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-
-            <a href="http://localhost/login/#/register/views"><button class="btn btn-info btn-lg btn-block" type="submit">Signup</button></a>
-        </div>
-      </form>
-
-        <div class = "alert" style = "width: 500px; margin: 10px auto;" ng-class = "{'alert-danger': login.message == 'Login Failed', 'alert-success': login.message == 'Login Success'}" ng-if = "login">
-                    
+        <div class="row row-centered pos">
+        <div class = "alert" style = "margin-top: 10px;" ng-class = "{'text-center col-md-6 col-md-offset-3 alert-danger': login.message == 'Login Failed', 'alert-success': login.message == 'Login Success'}" ng-if = "login">
             <h5><strong>{{login.message}}</strong></h5>
-
             <div class = "alert" ng-show = "login.status == 'Username Or Password Incorrect'">
                 <h5>{{login.status}}</h5>
             </div>
+        </div>
         </div>
     </div>

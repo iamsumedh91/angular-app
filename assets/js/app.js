@@ -1,4 +1,5 @@
 // MODULE
+
 var angularApp = angular.module('angularApp', ['ngRoute', 'ngCookies']);
 
 angularApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -47,7 +48,6 @@ angularApp.run(['$rootScope', '$location', '$cookieStore', '$http', '$window',
 }]);
 
 // CONTROLLERS
-
 /*
 * Menus Controller
 */

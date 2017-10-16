@@ -59,7 +59,7 @@ angularApp.controller('Home', function($scope, $http, $window, $rootScope, $cook
       // Getting the list of menus.
       $http({
         method : "GET",
-        url : "http://localhost/test_user/rest/get_menu"
+        url : "http://localhost/login/test_user/rest/get_menu"
       }).then(function mySuccess(response) {
         $scope.menus = response.data;
         });

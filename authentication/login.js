@@ -11,7 +11,7 @@ angularApp.controller('loginCntrl', ['$scope', '$http', '$window', '$cookieStore
     $scope.login_password = "";
 
     $scope.loginUser = function(){
-        $http.post('http://localhost/test_user/rest/login', {username: $scope.login_username, password: $scope.login_password})
+        $http.post('http://localhost/login/test_user/rest/login', {username: $scope.login_username, password: $scope.login_password})
         .then(function(result){
             $scope.login = result.data;
 

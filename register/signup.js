@@ -11,7 +11,7 @@ angularApp.controller('signupCntrl', ['$scope', '$window', '$http', '$rootScope'
         /*
         * Sending values from the Form
         */
-        $http.post('http://localhost/test_user/rest/signup', {name: $scope.name, username: $scope.username, password: $scope.password, 
+        $http.post('http://localhost/login/test_user/rest/signup', {name: $scope.name, username: $scope.username, password: $scope.password, 
             gender: $scope.gender, address: $scope.address, email: $scope.email, 
             mobile: $scope.mobile, pincode: $scope.pincode, occupation: $scope.occupation, dateofbirth: $scope.dateofbirth})
         .then(function(result){
